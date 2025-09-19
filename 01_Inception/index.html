@@ -9,6 +9,9 @@
     <div id="root">
       <h1>hello World!</h1>
     </div>
+    <div id="react-root">
+
+    </div>
     <script>
       const heading = document.createElement("h1");
       heading.innerHTML = "Hello World from JS";
@@ -17,6 +20,7 @@
       root.appendChild(heading);
     </script>
 
+    
     <!-- React Script  -->
     <script
       crossorigin
@@ -26,5 +30,14 @@
       crossorigin
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
     ></script>
+
+    <!-- Hello world using React  -->
+    <script>
+      const reactHeading = React.createElement("h1", {}, "Hello from react");
+      const reactRoot = ReactDOM.createRoot(document.getElementById('react-root'));
+
+      reactRoot.render(reactHeading)
+    </script>
+
   </body>
 </html>
