@@ -109,4 +109,20 @@
 - Removes warnings/debug info → runs faster.
 - Best for live/production websites.
 
+### 8. What is async and defer?
+
+- Both are attributes used in the script tag to control how JavaScript files are loaded and executed.
+
+**1. async**
+
+- Script is downloaded in parallel with HTML parsing.
+
+- Executes immediately after download (may pause HTML parsing).
+
+
+**2. defer**
+
+- Script is also downloaded in parallel with HTML parsing.
+
+- Executes only after the HTML parsing is complete (in order).
 
