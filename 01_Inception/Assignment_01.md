@@ -10,3 +10,18 @@
 
 - **Example:** typing ! in an HTML file and pressing Tab/Enter generates a complete HTML boilerplate.
 
+### 2. Difference between a Library and Framework?
+
+- **Library** → You control the flow. You pick and call functions when needed.
+
+  - **Example**: **React** (**Programmer** Decide decide how to use components).
+
+- **Framework** → It controls the flow. You just fill in the parts; the framework decides when to call your code.
+
+  - **Example**: **Angular** (**Framework** provides structure and calls your code at the right time).
+
+## Analogy
+
+**Library** = Ordering food → you choose what you want.
+
+**Framework** = Going to a buffet → structure is already set, you follow it.
