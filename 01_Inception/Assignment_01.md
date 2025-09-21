@@ -64,5 +64,27 @@
 - **Example**
 
 ```html
-<script crossorigin="use-credentials" src="https://cdn.example.com/lib.js"></script>
+<script
+  crossorigin="use-credentials"
+  src="https://cdn.example.com/lib.js"
+></script>
 ```
+
+### 6. What is diference between React and ReactDOM?
+
+- **React**
+
+  - The core library.
+  - We create and manage components, state, props, hooks, and logic.
+   - **Example:** 
+   React.createElement(), useState(), useEffect().
+
+
+
+- **ReactDOM**
+  - A ReactDOM is the React library that connects React with the actual DOM in the browser.
+  - Renders, React components into real HTML elements.
+  - **Example:** 
+
+  ```javascript
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />)
