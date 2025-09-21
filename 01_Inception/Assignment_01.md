@@ -29,6 +29,6 @@
 ### 3. What is CDN? Why do we use it?
 
 - CDN Stands for **Content Delivery Networks**
-- It is a netowrk of interconnected servers thats speeds up webpage loading of data heavy application.
+- It is a **netowrk of interconnected servers** thats speeds up webpage loading of data heavy application.
 - Normally, when a user visits a website, the data has to travel from the website’s main server to the user’s computer. If the user is far away from that server, large files (like videos or images) take longer to load.
 - With a CDN, the website’s content is stored on multiple servers located in different regions. The content is delivered from the server closest to the user, so it loads much faster.
