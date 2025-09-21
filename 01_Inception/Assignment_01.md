@@ -76,15 +76,37 @@
 
   - The core library.
   - We create and manage components, state, props, hooks, and logic.
-   - **Example:** 
-   React.createElement(), useState(), useEffect().
-
-
+  - **Example:**
+    React.createElement(), useState(), useEffect().
 
 - **ReactDOM**
+
   - A ReactDOM is the React library that connects React with the actual DOM in the browser.
   - Renders, React components into real HTML elements.
-  - **Example:** 
+  - **Example:**
 
   ```javascript
-  ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+  ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  ```
+
+### 7. What is the difference between react.development.js and react.production.js files via CDN ?
+
+#### **1. Development build**
+  ``` javascript
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+```
+- This version is bigger in size.
+- Includes warnings, helpful error messages, debugging info
+- Best for local development.
+
+#### **2. Production build**
+  ``` javascript
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+```
+- This version is minified and optimized.
+- Removes warnings/debug info → runs faster.
+- Best for live/production websites.
+
+
