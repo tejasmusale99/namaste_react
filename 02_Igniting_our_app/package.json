@@ -1,0 +1,14 @@
+{
+  "name": "02_igniting_our_app",
+  "version": "1.0.0",
+  "description": "igniting our app",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Tejas Musale",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  }
+}
