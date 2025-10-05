@@ -26,7 +26,10 @@ function Heading4() {
   return (
     <>
       <h1>normal function component</h1>
-      <Heading3 /> {/*component composition when we write component inside another component*/}
+      {/* Different way to call the component  */}
+      <Heading3></Heading3>
+      {Heading3()}
+      <Heading3 /> {/*component composition when we call component inside another component*/}
     </>
   );
 }
