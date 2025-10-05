@@ -30,6 +30,21 @@
 
 All three are methods to render the TitleComponent, functional component in some other component or React element.
 
-- {TitleComponent()} : call the TitleComponent function since Fucntional components are at the end of the day JS functions
-- <TitleComponent/> : Using self-closing tags
-- <TitleComponent></TitleComponent> : Using opening and closing tags
+- `{TitleComponent()}` : call the TitleComponent function since Fucntional components are at the end of the day JS functions
+- `{<TitleCompoenent />}`: Using self-closing tags
+- `<TitleComponent></TitleComponent>` : Using opening and closing tags
+
+### 5. Can we have multiple root elements in React using multiple createRoot()?
+
+- Yes we can have.
+- In case our app is fully built using React, simply have a single root for the entire app.
+- But in case our app/page is justy partially built with React, then we can have multiple createRoot(), and then use multiple root.render() methods to display different content in each root
+
+### 6. Can we have nested fragments in React?
+
+- Yes we can have nested fragments
+
+### 7. What makes our web app code so readable in case of React? Is it just React itself?
+
+- It’s not just because of React it’s JSX that makes our code easier to read and write!
+Without JSX, we’d have to use the old createElement() method, which was quite complicated and messy.
