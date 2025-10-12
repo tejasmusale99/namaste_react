@@ -18,11 +18,54 @@ const Header = () => {
   )
 }
 
+const RestaurantCard = () => {
+  return (
+    <div className="restaurant-card">
+      <div className="card-image">
+        <img src='https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/9/1/bf6a1af3-cf4c-4cda-af2a-865c0aee1834_71010.JPG' alt="The Spice Hub" />
+        <span className="discount">20% OFF</span>
+      </div>
+      <div className="card-content">
+        <h3 className="restaurant-name">The Spice Hub</h3>
+        <p className="cuisine">Indian, Chinese</p>
+        <div className="card-footer">
+          <span className="rating">⭐ 4.5</span>
+          <span className="delivery-time">30-40 mins</span>
+          <span className="cost">₹500 for two</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
+const Body = () => {
+  return (
+    <div className="body-container">
+          <div className="search-bar">
+        <input type="text" placeholder="Search for restaurants or cuisines..." />
+        <button>Search</button>
+      </div>
+
+      <div className="restaurants-container">
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+      </div>
+    </div>
+  );
+};
 
 const AppLayout = () => {
     return(
         <div className="applayout">
             <Header />
+            <Body />
         </div>
     )
 }
