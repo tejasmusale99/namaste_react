@@ -31,6 +31,13 @@
 - You'll need to use JavaScript comments inside of JSX.
 - You can use regular /* Block Comments */, but they need to be wrapped in curly braces: {/* A JSX comment */}
 
+### Q4. React Fragment vs <></> 
+- Both <React.Fragment> and <> are ways to group children in React without adding an extra DOM element.
+- They're helpful for avoiding unnecessary nesting and keeping JSX code clean.
+- Think of them as invisible wrappers! <React.Fragment> is the explicit way, while <> is a shorthand introduced in React 16.6. Both achieve the same outcome.
+
+
+
 
 
 
