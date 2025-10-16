@@ -1,4 +1,4 @@
-import logoImage from 'url:/swaadPoint.jpg';
+import logoImage from 'url:/SwaadpointLogo.png';
 
 const Header = () => {
   
