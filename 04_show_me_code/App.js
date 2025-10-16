@@ -1,4 +1,6 @@
 import ReactDOM from "react-dom/client";
+import logoImage from 'url:./swaadPoint.jpg';
+// console.log(logoImage)
 
 const resList = [
     {
@@ -573,11 +575,17 @@ const resList = [
   ]
 
 const Header = () => {
+  
   return (
     <header className="header">
       <div className="logo-container">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNhM_Aeej946r7uCMUzIPGUAn7jhflG2bO0nJZdE6tsME1ABwXaYTrZNp-xt0hbyPo6zs&usqp=CAU"
+          alt="Logo"
+          className="logo"
+        />
+        <img
+          src={logoImage}
           alt="Logo"
           className="logo"
         />
