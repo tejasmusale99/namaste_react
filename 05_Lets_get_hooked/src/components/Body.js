@@ -1,9 +1,20 @@
 import RestaurantCard from "./RestaurantCard";
 import { resList } from "../utils/mockData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Body = () => {
   const [listOfRestro, setListOfRestro] = useState(resList);
+
+  useEffect(() => {
+   fetchData()
+  }, []);
+
+ const fetchData = async() =>{
+     const fetchData = await fetch('https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=19.9728896&lng=73.8229516&carousel=true&third_party_vendor=1')
+    const jsonData = await fetchData.json() 
+    // console.log(jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
+    setListOfRestro(jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
+ }
 
   return (
     <div className="body-container">
@@ -14,11 +25,11 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-           const filtredLisdt = listOfRestro.filter((res)=>{
-              console.log(res.info.avgRating)
-              return res.info.avgRating > 4
+            const filtredLisdt = listOfRestro.filter((res) => {
+              console.log(res.info.avgRating);
+              return res.info.avgRating > 4;
             });
-            setListOfRestro(filtredLisdt)
+            setListOfRestro(filtredLisdt);
           }}
         >
           Top Rated ⭐
