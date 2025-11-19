@@ -1,7 +1,7 @@
 import {cdnUrl} from '../utils/constants.js'
 
 const RestaurantCard = (props) => {
-  console.log(props.res.info)
+  // console.log(props.res.info)
   const {name,avgRating,cuisines,costForTwo,sla,cloudinaryImageId,aggregatedDiscountInfoV3} = props.res.info
 
   return (
