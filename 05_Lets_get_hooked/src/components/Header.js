@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import logoImage from 'url:/SwaadpointLogo.png';
 
 const Header = () => {
-  
+   const [isLogIn, setIsLogIn] = useState(true);
+
   return (
     <header className="header">
       <div className="logo-container">
@@ -19,6 +21,7 @@ const Header = () => {
           🛒 Cart
         </a>
       </nav>
+      <button onClick={()=>{setIsLogIn(!isLogIn)}}>{isLogIn?'Log In':'Log Out'}</button>
     </header>
   );
 };
