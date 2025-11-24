@@ -6,6 +6,7 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   const [listOfRestro, setListOfRestro] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [filtredRestro, setFiltredRestro] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -18,6 +19,10 @@ const Body = () => {
     const jsonData = await fetchData.json();
     // console.log(jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
     setListOfRestro(
+      jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
+    setFiltredRestro(
       jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
@@ -46,12 +51,12 @@ const Body = () => {
           <button
             onClick={() => {
               // console.log(searchText);
-              const filtredList = listOfRestro.filter((restro)=>{
-                return(
-                  restro.info.name.toLowerCase().includes(searchText.toLowerCase())
-                )
-              })
-              setListOfRestro(filtredList)
+              const filtredList = listOfRestro.filter((restro) => {
+                return restro.info.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase());
+              });
+              setFiltredRestro(filtredList);
             }}
           >
             Search
@@ -76,7 +81,7 @@ const Body = () => {
 
       <div className="restaurants-container">
         {/* <RestaurantCard resName="The Spice Hub" cuisine="Indian, Chinese" rating="4.4" delTime="20-30" cost="500"/> */}
-        {listOfRestro.map((res, id) => {
+        {filtredRestro.map((res, id) => {
           return <RestaurantCard res={res} key={id} />;
         })}
       </div>
