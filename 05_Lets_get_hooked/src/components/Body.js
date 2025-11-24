@@ -5,6 +5,7 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestro, setListOfRestro] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -32,10 +33,29 @@ const Body = () => {
 
   return (
     <div className="body-container">
-  <div className="search-filter-row">
+      <div className="search-filter-row">
         <div className="search-bar">
-          <input type="text" placeholder="Search for restaurants" />
-          <button>Search</button>
+          <input
+            type="text"
+            placeholder="Search for restaurants"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              // console.log(searchText);
+              const filtredList = listOfRestro.filter((restro)=>{
+                return(
+                  restro.info.name.toLowerCase().includes(searchText.toLowerCase())
+                )
+              })
+              setListOfRestro(filtredList)
+            }}
+          >
+            Search
+          </button>
         </div>
 
         <div className="top-rated-filter">
@@ -52,7 +72,7 @@ const Body = () => {
             Top Rated ⭐
           </button>
         </div>
-</div>
+      </div>
 
       <div className="restaurants-container">
         {/* <RestaurantCard resName="The Spice Hub" cuisine="Indian, Chinese" rating="4.4" delTime="20-30" cost="500"/> */}
