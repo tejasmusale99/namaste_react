@@ -7,11 +7,13 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo-container">
+        <a href="http://localhost:1234/">
         <img
           src={logoImage}
           alt="Logo"
           className="logo"
         />
+        </a>
       </div>
       <nav className="nav">
         <a href="#">Home</a>
