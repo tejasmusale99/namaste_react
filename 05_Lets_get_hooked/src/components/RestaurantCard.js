@@ -15,7 +15,7 @@ const RestaurantCard = (props) => {
         </div>
       <div className="card-content">
         <h3 className="restaurant-name">{name}</h3>
-        <p className="cuisine">{cuisines}</p>
+        <p className="cuisine">{" " + cuisines}</p>
         <div className="card-footer">
           <span className="rating">⭐ {avgRating}</span>
           <span className="delivery-time">{sla.deliveryTime} mins</span>
