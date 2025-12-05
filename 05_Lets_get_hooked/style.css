@@ -280,3 +280,16 @@
   50% { background-color: #dcdcdc; }
   100% { background-color: #ececec; }
 }
+
+/*************  Error Element **************/
+
+
+
+  .errElement{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center ;    
+        text-align: center;
+      }
