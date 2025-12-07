@@ -1,29 +1,32 @@
-import { useState } from 'react';
-import logoImage from 'url:/SwaadpointLogo.png';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import logoImage from "url:/SwaadpointLogo.png";
 
 const Header = () => {
-   const [isLogIn, setIsLogIn] = useState(true);
+  const [isLogIn, setIsLogIn] = useState(true);
 
   return (
     <header className="header">
       <div className="logo-container">
         <a href="http://localhost:1234/">
-        <img
-          src={logoImage}
-          alt="Logo"
-          className="logo"
-        />
+          <img src={logoImage} alt="Logo" className="logo" />
         </a>
       </div>
       <nav className="nav">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#" className="cart">
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/" className="cart">
           🛒 Cart
-        </a>
+        </Link>
       </nav>
-      <button onClick={()=>{setIsLogIn(!isLogIn)}}>{isLogIn?'Log In':'Log Out'}</button>
+      <button
+        onClick={() => {
+          setIsLogIn(!isLogIn);
+        }}
+      >
+        {isLogIn ? "Log In" : "Log Out"}
+      </button>
     </header>
   );
 };
