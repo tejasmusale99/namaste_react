@@ -105,7 +105,7 @@ const fetchData = async () => {
       <div className="restaurants-container">
         {/* <RestaurantCard resName="The Spice Hub" cuisine="Indian, Chinese" rating="4.4" delTime="20-30" cost="500"/> */}
         {filtredRestro?.map((res) => {
-          return (<Link key={res.info.id} to={"/restaurants/" + res.info.id}><RestaurantCard res={res} /></Link>)
+          return (<Link className="restaurant-link" key={res.info.id} to={"/restaurants/" + res.info.id}><RestaurantCard res={res} /></Link>)
         })}
       </div>
     </div>
