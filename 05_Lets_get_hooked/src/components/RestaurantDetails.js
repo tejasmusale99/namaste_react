@@ -9,7 +9,7 @@ const RestaurantDetails = () => {
     fetchMenu();
   }, []);
 
-  const menuUrl = "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=20.0051498&lng=73.7676967&restaurantId="
+  const menuUrl = "https://proxy.corsfix.com/?https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=20.0051498&lng=73.7676967&restaurantId="
 
   const fetchMenu = async () => {
     const data = await fetch(menuUrl + resId);
