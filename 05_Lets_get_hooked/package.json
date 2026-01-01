@@ -13,8 +13,10 @@
     "parcel": "^2.16.0"
   },
   "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "baseline-browser-mapping": "^2.9.8",
+    "caniuse-lite": "^1.0.30001760",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "react-router-dom": "^6.30.2"
   }
 }

@@ -293,3 +293,124 @@
         align-items: center ;    
         text-align: center;
       }
+
+
+      /************** RestaurantDetails Page **************/
+
+
+.restaurant-page {
+  width: 760px;
+  margin: 40px auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+/* Restaurant Header */
+.restaurant-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.restaurant-info-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  margin-bottom: 32px;
+}
+
+.rating-row {
+  display: flex;
+  gap: 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.category {
+  font-size: 14px;
+  color: #fc8019;
+  margin: 6px 0;
+}
+
+.outlet-time {
+  font-size: 13px;
+  color: #686b78;
+}
+
+/* Section title */
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* Menu Item */
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 26px 0;
+  border-bottom: 1px solid #e9e9eb;
+}
+
+.menu-left {
+  width: 65%;
+}
+
+.menu-left h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 4px 0;
+}
+
+.price {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 6px 0;
+}
+
+.desc {
+  font-size: 13px;
+  color: #686b78;
+  line-height: 1.45;
+  max-width: 95%;
+}
+
+/* Right image + add button */
+.menu-right {
+  width: 140px;
+}
+
+.menu-right img {
+  width: 140px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+.img-wrapper {
+  position: relative;   /* 🔥 THIS IS THE KEY FIX */
+  width: 140px;
+}
+
+/* ADD button */
+.add-btn {
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 28px;
+  background: #fff;
+  color: #60b246;
+  border: 1px solid #60b246;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+
+.add-btn:hover {
+  background: #f7fff3;
+}
