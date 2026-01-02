@@ -4,7 +4,7 @@ const About = () => {
   return (
     <>
       <h1>About Page</h1>
-      <UserClass />
+      <UserClass UserName={"tejas99"} Designation={"Full stack ai developer"}/>
     </>
   );
 };
