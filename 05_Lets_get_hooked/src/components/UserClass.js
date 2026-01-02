@@ -6,19 +6,25 @@ class UserClass extends React.Component {
     // console.log(this.props);
 
     this.state = {
-        count:0,
-        count1:1,
-    }
+      count: 0,
+      count1: 1,
+    };
   }
   render() {
-
-    const {UserName,Designation} = this.props;
-    const {count, count1} = this.state;
+    const { UserName, Designation } = this.props;
+    const { count, count1 } = this.state;
 
     return (
       <>
         <h3 style={{ color: "blue" }}>Username: {UserName}</h3>
         <h3 style={{ color: "red" }}>Designation: {Designation}</h3>
+        <button
+          onClick={() => {
+            this.setState({ count: this.state.count + 1, count1: this.state.count1 + 1});
+          }}
+        >
+          IncreseCount
+        </button>
 
         <h1>Count: {count}</h1>
         <h1>Count1: {count1}</h1>
