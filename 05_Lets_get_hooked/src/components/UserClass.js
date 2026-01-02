@@ -3,13 +3,25 @@ import React from "react";
 class UserClass extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
+    // console.log(this.props);
+
+    this.state = {
+        count:0,
+        count1:1,
+    }
   }
   render() {
+
+    const {UserName,Designation} = this.props;
+    const {count, count1} = this.state;
+
     return (
       <>
-        <h3 style={{ color: "blue" }}>Username:{this.props.UserName}</h3>
-        <h3 style={{ color: "red" }}>Username:{this.props.Designation}</h3>
+        <h3 style={{ color: "blue" }}>Username: {UserName}</h3>
+        <h3 style={{ color: "red" }}>Designation: {Designation}</h3>
+
+        <h1>Count: {count}</h1>
+        <h1>Count1: {count1}</h1>
       </>
     );
   }
