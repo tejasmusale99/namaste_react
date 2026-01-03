@@ -49,13 +49,16 @@ class UserClass extends React.Component {
     this.state = {
       userInfo: { 
         name: "dummy", 
-        location: "default"
+        login: "tejasmusale99",
+        following: 1,
+        followers:1,
+        public_repos:34,
        }
     };
   }
 
   async componentDidMount() {
-    const userFetch = await fetch("https://api.github.com/users/tejasmusale99");
+    const userFetch = await fetch("https://api.github.com/users/akshaymarch7");
     const json = await userFetch.json();
     console.log(json);
     this.setState({ userInfo: json });
