@@ -38,11 +38,16 @@ class About extends React.Component {
 
 - parent constructor 
 - parent render 
+
+render batch 
+
   - tejas constructor
   - tejas render 
 
   - shubham constructor
   - shubham render
+
+Commit batch 
 
   - tejas componentDidMount
   - shubham componentDidMount
