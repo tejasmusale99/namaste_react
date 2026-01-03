@@ -20,12 +20,8 @@ class About extends React.Component {
       <>
         <h1>About Page</h1>
         <UserClass
-          UserName={"tejas99"}
-          Designation={"Frontend Developer"}
-        />
-        <UserClass
-          UserName={"shubham99"}
-          Designation={"Backend Developer"}
+          // UserName={"tejas99"}
+          // Designation={"Frontend Developer"}
         />
       </>
     );

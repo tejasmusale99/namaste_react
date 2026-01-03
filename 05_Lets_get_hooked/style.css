@@ -396,7 +396,7 @@
 }
 
 .img-wrapper {
-  position: relative;   /* 🔥 THIS IS THE KEY FIX */
+  position: relative;   
   width: 140px;
 }
 
@@ -420,4 +420,100 @@
 
 .add-btn:hover {
   background: #f7fff3;
+}
+
+
+/******** GitHub profile *********/
+
+.about-page {
+  padding: 60px 80px;
+  /* background: linear-gradient(to right, #0f2027, #203a43); */
+  min-height: 100vh;
+  color: #0e0707;
+}
+
+.about-title {
+  font-size: 42px;
+  margin-bottom: 40px;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+/* Left */
+.about-avatar {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+}
+
+/* Right */
+.about-right h2 {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.username {
+  color: #545353;
+  margin-bottom: 20px;
+}
+
+.bio {
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.stats div {
+  text-align: center;
+}
+
+.stats strong {
+  font-size: 24px;
+  display: block;
+}
+
+.stats span {
+  font-size: 14px;
+  color: #545353;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #0b0b0b;
+  color: #ffffff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ffffff;
+  color: #0b0b0b;
+  border: 2px solid black;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-page {
+    padding: 40px 20px;
+  }
 }
