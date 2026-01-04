@@ -66,6 +66,10 @@ class UserClass extends React.Component {
     const json = await userFetch.json();
     // console.log(json);
     this.setState({ userInfo: json });
+
+   this.timer = setInterval(()=>{
+      console.log("Tejas op")
+    },1000)
   }
 
   componentDidUpdate(){
@@ -74,6 +78,7 @@ class UserClass extends React.Component {
   }
   componentWillUnmount(){
     console.log('componentWillUnmount');
+    clearInterval(this.timer)
   }
 
   render() {
