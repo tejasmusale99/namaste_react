@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineOffline from "../utils/customHooks/useOnlineOffline";
 
 const Body = () => {
   const [listOfRestro, setListOfRestro] = useState([]);
@@ -50,6 +51,12 @@ const fetchData = async () => {
   //       ?.restaurants
   //   );
   // };
+
+    const onlineStatus = useOnlineOffline()
+
+  if(onlineStatus === false){
+    return (<h1>Check Your internet connection is lost</h1>)
+  }
 
       if (listOfRestro?.length === 0) {
     return (
