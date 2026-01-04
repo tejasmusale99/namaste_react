@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineOffline from "../utils/customHooks/useOnlineOffline";
+import OfflineGame from "./OfflineGame";
 
 const Body = () => {
   const [listOfRestro, setListOfRestro] = useState([]);
@@ -55,7 +56,7 @@ const fetchData = async () => {
     const onlineStatus = useOnlineOffline()
 
   if(onlineStatus === false){
-    return (<h1>Check Your internet connection is lost</h1>)
+    return <OfflineGame />
   }
 
       if (listOfRestro?.length === 0) {
