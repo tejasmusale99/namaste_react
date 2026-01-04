@@ -97,11 +97,11 @@ const fetchData = async () => {
           <button
             className="filter-btn"
             onClick={() => {
-              const filtredLisdt = listOfRestro?.filter((res) => {
-                // console.log(res.info.avgRating);
-                return res.info.avgRating > 4;
+              const filtredList = listOfRestro?.filter((res) => {
+                return res.info.avgRating > 4.4;
               });
-              setListOfRestro(filtredLisdt);
+              setFiltredRestro(filtredList);
+              console.log(filtredList)
             }}
           >
             Top Rated ⭐
