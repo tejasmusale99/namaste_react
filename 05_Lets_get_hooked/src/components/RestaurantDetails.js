@@ -1,22 +1,10 @@
-import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useRestaurantMenu from "../utils/customHooks/useRestaurantMenu";
 
 const RestaurantDetails = () => {
-  const [menuDetails, setMenuDetails] = useState(null);
-  const {resId} = useParams()
+  const { resId } = useParams();
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  const menuUrl = "https://proxy.corsfix.com/?https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=20.0051498&lng=73.7676967&restaurantId="
-
-  const fetchMenu = async () => {
-    const data = await fetch(menuUrl + resId);
-    const jsonData = await data.json();
-    console.log(jsonData);
-    setMenuDetails(jsonData);
-  };
+  const menuDetails = useRestaurantMenu(resId);
 
   const info = menuDetails?.data?.cards[2]?.card?.card?.info;
   const itemCards =
@@ -54,7 +42,9 @@ const RestaurantDetails = () => {
         </div>
       </div>
 
-      <h2 className="section-title">Recommended {'(' + itemCards?.length + ')'}</h2>
+      <h2 className="section-title">
+        Recommended {"(" + itemCards?.length + ")"}
+      </h2>
 
       {itemCards.map((menuItems) => {
         return (
@@ -62,11 +52,9 @@ const RestaurantDetails = () => {
             <div className="menu-left">
               <h3>{menuItems?.card?.info?.name}</h3>
               <p className="price">
-                 {'₹' + menuItems?.card?.info?.price/100}
+                {"₹" + menuItems?.card?.info?.price / 100}
               </p>
-              <p className="desc">
-                {menuItems?.card?.info?.description}
-              </p>
+              <p className="desc">{menuItems?.card?.info?.description}</p>
             </div>
 
             <div className="menu-right">
