@@ -1,7 +1,7 @@
 import {cdnUrl} from '../utils/constants.js'
 
 const RestaurantCard = (props) => {
-  // console.log(props.res.info)
+  console.log(props.res.info)
   const {name,avgRating,cuisines,costForTwo,sla,cloudinaryImageId,aggregatedDiscountInfoV3} = props.res.info
 
   return (
@@ -11,7 +11,8 @@ const RestaurantCard = (props) => {
           src={cdnUrl + cloudinaryImageId}
           alt="The Spice Hub"
         />
-        {aggregatedDiscountInfoV3?.header&& <span className="discount">{aggregatedDiscountInfoV3?.header} </span> } 
+        {/* {aggregatedDiscountInfoV3?.header && <span className="discount">{aggregatedDiscountInfoV3?.header} </span> }  */}
+        {aggregatedDiscountInfoV3?.header === "ITEMS"?" ":<span className="discount">{aggregatedDiscountInfoV3?.header} </span>}
         </div>
       <div className="card-content">
         <h3 className="restaurant-name">{name}</h3>
