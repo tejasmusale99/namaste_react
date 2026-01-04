@@ -55,12 +55,16 @@ class UserClass extends React.Component {
         public_repos:34,
        }
     };
+
+    console.log("child constructor");
+    
   }
 
   async componentDidMount() {
-    const userFetch = await fetch("https://api.github.com/users/akshaymarch7");
+    console.log("child componentDidMount")
+    const userFetch = await fetch("https://api.github.com/users/tejasmusale99");
     const json = await userFetch.json();
-    console.log(json);
+    // console.log(json);
     this.setState({ userInfo: json });
   }
 
@@ -68,8 +72,13 @@ class UserClass extends React.Component {
     console.log('ComponentDid Update');
     
   }
+  componentWillUnmount(){
+    console.log('componentWillUnmount');
+  }
 
   render() {
+    console.log("child render");
+    
     const { name, login, avatar_url,followers,following,url,public_repos } = this.state.userInfo;
     return (
       <div className="about-page">

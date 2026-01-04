@@ -18,7 +18,6 @@ class About extends React.Component {
     
     return (
       <>
-        <h1>About Page</h1>
         <UserClass
           // UserName={"tejas99"}
           // Designation={"Frontend Developer"}
