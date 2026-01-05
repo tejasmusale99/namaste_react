@@ -7,7 +7,10 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantDetails from "./components/RestaurantDetails";
-import Cart from "./components/Cart";
+import { lazy, Suspense } from "react";
+
+const Cart = lazy(()=>import("./components/Cart"))
+
 
 const AppLayout = () => {
   return (
@@ -38,7 +41,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "cart",
-        element: <Cart />,
+        element: <Suspense fallback={<><h1>Loading....</h1></>}> <Cart /></Suspense>,
       },
       {
         path: "/restaurants/:resId",
