@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/customHooks/useRestaurantMenu";
+import { Skeleton } from 'antd';
 
 const RestaurantDetails = () => {
   const { resId } = useParams();
@@ -14,7 +15,7 @@ const RestaurantDetails = () => {
   // console.log(itemCards);
 
   if (menuDetails == null) {
-    return <h1>loading.....</h1>;
+    return <Skeleton avatar paragraph={{ rows: 4 }} />
   }
 
   return (
