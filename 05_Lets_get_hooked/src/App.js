@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantDetails from "./components/RestaurantDetails";
 import { lazy, Suspense } from "react";
+import "./index.css";  
 
 const Cart = lazy(()=>import("./components/Cart"))
 
