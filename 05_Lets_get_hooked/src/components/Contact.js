@@ -8,24 +8,24 @@ const Contact = () => {
       <form className="space-y-6">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-          <input className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" placeholder="Enter your name" />
+          <input className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300" type="text" placeholder="Enter your name" />
         </div>
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-          <input className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" type="email" placeholder="Enter your email" />
+          <input className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300" type="email" placeholder="Enter your email" />
         </div>
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
           <textarea
-          className="w-full border border-gray-300 rounded-lg px-4 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full border border-gray-300 rounded-lg px-4 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-orange-300"
             rows="4"
             placeholder="Write your message here..."
           ></textarea>
         </div>
 
-        <button className="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition" type="submit">Send Message</button>
+        <button className="w-full bg-orange-500 text-white font-semibold py-3 rounded-lg hover:bg-orange-600 transition" type="submit">Send Message</button>
       </form>
     </div>
     </div>
