@@ -1,19 +1,24 @@
-import {cdnUrl} from '../utils/constants.js'
+import { cdnUrl } from "../utils/constants.js";
 
 const RestaurantCard = (props) => {
   // console.log(props.res.info)
-  const {name,avgRating,cuisines,costForTwo,sla,cloudinaryImageId,aggregatedDiscountInfoV3} = props.res.info
+  const {
+    name,
+    avgRating,
+    cuisines,
+    costForTwo,
+    sla,
+    cloudinaryImageId,
+    aggregatedDiscountInfoV3,
+  } = props.res.info;
 
   return (
     <div className="restaurant-card">
       <div className="card-image">
-        <img
-          src={cdnUrl + cloudinaryImageId}
-          alt="The Spice Hub"
-        />
+        <img src={cdnUrl + cloudinaryImageId} alt="The Spice Hub" />
         {/* {aggregatedDiscountInfoV3?.header && <span className="discount">{aggregatedDiscountInfoV3?.header} </span> }  */}
-        {aggregatedDiscountInfoV3?.header === "ITEMS"?" ":<span className="discount">{aggregatedDiscountInfoV3?.header} </span>}
-        </div>
+        {/* {aggregatedDiscountInfoV3?.header === "ITEMS"?" ":<span className="discount">{aggregatedDiscountInfoV3?.header} </span>} */}
+      </div>
       <div className="card-content">
         <h3 className="restaurant-name">{name}</h3>
         <p className="cuisine">{" " + cuisines}</p>
@@ -25,6 +30,20 @@ const RestaurantCard = (props) => {
       </div>
     </div>
   );
+};
+
+export const OfferRestaurantCard = (RestaurantCard) => {
+  return (props) => {
+    // console.log(props);
+    const { aggregatedDiscountInfoV3 } = props.res.info;
+    // console.log(aggregatedDiscountInfoV3.header)
+    return (
+      <>
+        <h1>{aggregatedDiscountInfoV3?.header}</h1>
+        <RestaurantCard {...props} />
+      </>
+    );
+  };
 };
 
 export default RestaurantCard;

@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {OfferRestaurantCard} from "./RestaurantCard";
 // import { resList } from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
@@ -11,7 +11,9 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filtredRestro, setFiltredRestro] = useState([]);
 
+console.log(listOfRestro)
 
+const OfferCard = OfferRestaurantCard(RestaurantCard) 
 
   useEffect(() => {
     fetchData();
@@ -113,7 +115,7 @@ const fetchData = async () => {
       <div className="restaurants-container">
         {/* <RestaurantCard resName="The Spice Hub" cuisine="Indian, Chinese" rating="4.4" delTime="20-30" cost="500"/> */}
         {filtredRestro?.map((res) => {
-          return (<Link className="restaurant-link" key={res.info.id} to={"/restaurants/" + res.info.id}><RestaurantCard res={res} /></Link>)
+          return (<Link className="restaurant-link" key={res.info.id} to={"/restaurants/" + res.info.id}>{res.info.aggregatedDiscountInfoV3.header==="ITEMS"?<RestaurantCard res={res} />:<OfferCard res={res}/>}</Link>)
         })}
       </div>
     </div>
