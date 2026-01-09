@@ -1,5 +1,5 @@
 import { cdnUrl } from "../utils/constants.js";
-
+// import "../../style.css"
 const RestaurantCard = (props) => {
   // console.log(props.res.info)
   const {
@@ -35,13 +35,21 @@ const RestaurantCard = (props) => {
 export const OfferRestaurantCard = (RestaurantCard) => {
   return (props) => {
     // console.log(props);
-    const { aggregatedDiscountInfoV3 } = props.res.info;
+    const { aggregatedDiscountInfoV3 } = props?.res?.info;
     // console.log(aggregatedDiscountInfoV3.header)
     return (
-      <>
-        <h1>{aggregatedDiscountInfoV3?.header}</h1>
+  <div className="offer-card-wrapper">
+        <div className="offer-badge">
+          {aggregatedDiscountInfoV3?.header}
+          {aggregatedDiscountInfoV3?.subHeader && (
+            <span className="offer-sub">
+              {aggregatedDiscountInfoV3.subHeader}
+            </span>
+          )}
+        </div>
+
         <RestaurantCard {...props} />
-      </>
+      </div>
     );
   };
 };

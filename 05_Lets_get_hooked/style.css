@@ -4,8 +4,8 @@
   align-items: center;
   padding: 15px 40px;
   background-color: white;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  font-family: 'Arial', sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
 }
 
 .logo {
@@ -31,16 +31,15 @@
   color: #ff6c00; /* Make cart orange */
 }
 
-
 .restaurant-card {
   width: 280px;
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   cursor: pointer;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 .restaurant-card:hover {
@@ -86,6 +85,11 @@
   margin: 5px 0;
   font-size: 14px;
   color: #666;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 40px;
 }
 
 .card-footer {
@@ -105,14 +109,14 @@
   font-weight: bold;
 }
 
-.delivery-time, .cost {
+.delivery-time,
+.cost {
   color: #333;
 }
 
-
 .body-container {
   padding: 20px 40px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   background-color: #f8f8f8;
   min-height: 100vh;
 }
@@ -156,12 +160,37 @@
   justify-content: center;
 }
 
+/* Wrapper so badge can be positioned */
+.offer-card-wrapper {
+  position: relative;
+  /* width: 300px; */
+}
+
+/* Offer badge like Swiggy */
+.offer-badge {
+  position: absolute;
+  z-index: 2;
+  background: #e65a00;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional smaller text */
+.offer-sub {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+}
 
 /********* Top rated Filter Button *******/
 .search-filter-row {
   display: flex;
   justify-content: center;
-  gap: 20px;   
+  gap: 20px;
   margin-bottom: 30px;
 }
 
@@ -190,7 +219,6 @@
 
 /***** spinning Loader ****/
 
-
 /* .loader {
   border: 4px solid #f3f3f3; 
   border-top: 4px solid  #ff6c00;
@@ -206,7 +234,6 @@
   100% { transform: rotate(360deg); }
 } */
 
-
 /************ Shimmer **************/
 
 .shimmer-wrapper {
@@ -215,18 +242,16 @@
   justify-content: center;
 }
 
-
 /* Container */
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
- justify-content: center;
+  justify-content: center;
   align-items: center; /* top side */
-  width:80%;
+  width: 80%;
 }
-
 
 /* Card */
 .shimmer-card {
@@ -235,7 +260,7 @@
   border-radius: 16px;
   background: #f0f0f0;
   padding: 12px;
-  box-shadow: rgba(0,0,0,0.1) 0 4px 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
   animation: pulse 1.5s infinite ease-in-out;
 }
 
@@ -276,27 +301,29 @@
 
 /* Animation */
 @keyframes pulse {
-  0% { background-color: #ececec; }
-  50% { background-color: #dcdcdc; }
-  100% { background-color: #ececec; }
+  0% {
+    background-color: #ececec;
+  }
+  50% {
+    background-color: #dcdcdc;
+  }
+  100% {
+    background-color: #ececec;
+  }
 }
 
 /*************  Error Element **************/
 
+.errElement {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-
-  .errElement{
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center; 
-        align-items: center ;    
-        text-align: center;
-      }
-
-
-      /************** RestaurantDetails Page **************/
-
+/************** RestaurantDetails Page **************/
 
 .restaurant-page {
   width: 760px;
@@ -309,8 +336,12 @@
   font-size: 15px;
   font-weight: 700;
   margin-bottom: 12px;
-  list-style-type:none;
+  list-style-type: none;
   text-decoration: none;
+    display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .restaurant-link {
@@ -322,7 +353,7 @@
   background: #fff;
   border-radius: 16px;
   padding: 18px 22px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   margin-bottom: 32px;
 }
 
@@ -392,11 +423,11 @@
   height: 120px;
   border-radius: 12px;
   object-fit: cover;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
 .img-wrapper {
-  position: relative;   
+  position: relative;
   width: 140px;
 }
 
@@ -414,14 +445,12 @@
   font-weight: 700;
   font-size: 14px;
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
-
 
 .add-btn:hover {
   background: #f7fff3;
 }
-
 
 /******** GitHub profile *********/
 
@@ -518,9 +547,7 @@
   }
 }
 
-
 /********** Cart **********/
-
 
 /* Cart Page */
 .cart-page {
