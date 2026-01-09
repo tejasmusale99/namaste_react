@@ -115,7 +115,7 @@ const fetchData = async () => {
       <div className="restaurants-container">
         {/* <RestaurantCard resName="The Spice Hub" cuisine="Indian, Chinese" rating="4.4" delTime="20-30" cost="500"/> */}
         {filtredRestro?.map((res) => {
-          return (<Link className="restaurant-link" key={res.info.id} to={"/restaurants/" + res.info.id}>{res.info.aggregatedDiscountInfoV3.header==="ITEMS"?<RestaurantCard res={res} />:<OfferCard res={res}/>}</Link>)
+          return (<Link className="restaurant-link" key={res.info.id} to={"/restaurants/" + res.info.id}>{res?.info?.aggregatedDiscountInfoV3?.header==="ITEMS"?<RestaurantCard res={res} />:<OfferCard res={res}/>}</Link>)
         })}
       </div>
     </div>
