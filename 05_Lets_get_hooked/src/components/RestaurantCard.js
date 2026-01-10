@@ -36,7 +36,6 @@ export const OfferRestaurantCard = (RestaurantCard) => {
   return (props) => {
     // console.log(props);
     const { aggregatedDiscountInfoV3 } = props?.res?.info;
-    // console.log(aggregatedDiscountInfoV3.header)
     return (
   <div className="offer-card-wrapper">
         <div className="offer-badge">

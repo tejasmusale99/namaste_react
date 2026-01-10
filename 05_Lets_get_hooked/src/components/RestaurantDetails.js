@@ -12,7 +12,7 @@ const RestaurantDetails = () => {
     menuDetails?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
       ?.card?.card?.itemCards;
 
-  // console.log(itemCards);
+      console.log(menuDetails?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR)
 
   if (menuDetails == null) {
     return <Skeleton avatar paragraph={{ rows: 4 }} />
