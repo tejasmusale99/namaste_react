@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/customHooks/useRestaurantMenu";
-import { Skeleton } from 'antd';
+import { Skeleton } from "antd";
 
 const RestaurantDetails = () => {
   const { resId } = useParams();
@@ -12,17 +12,29 @@ const RestaurantDetails = () => {
     menuDetails?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
       ?.card?.card?.itemCards;
 
-      console.log(menuDetails?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR.cards)
+  // console.log(
+  //   menuDetails?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR.cards
+  // );
+
+  const RestaurantItemCategories =
+    menuDetails?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR.cards.filter(
+      (category) => {
+        return (
+          category.card.card["@type"] ===
+          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+        );
+      }
+    );
+
+  console.log(RestaurantItemCategories);
 
   if (menuDetails == null) {
-    return <Skeleton avatar paragraph={{ rows: 4 }} />
+    return <Skeleton avatar paragraph={{ rows: 4 }} />;
   }
 
   return (
     <div className="restaurant-page">
-      {/* Restaurant Header */}
-      <h1 className="restaurant-name">{info?.name}</h1>
-
+      <h1 className="restaurant-name">{info.name}</h1>
       <div className="restaurant-info-card">
         <div className="rating-row">
           <span className="rating">
@@ -30,9 +42,7 @@ const RestaurantDetails = () => {
           </span>
           <span className="price">{info?.costForTwoMessage}</span>
         </div>
-
         <p className="category">{" " + info?.cuisines}</p>
-
         <div className="outlet-time">
           <p>
             <strong>Outlet:</strong> {info?.locality}
@@ -43,9 +53,12 @@ const RestaurantDetails = () => {
         </div>
       </div>
 
-      <h2 className="section-title">
-        Recommended {"(" + itemCards?.length + ")"}
-      </h2>
+      {RestaurantItemCategories.map((item) => {
+        // console.log(item.card.card.itemCards[0].card.info.name);
+        return (
+       <h1>{item.card.card.title}({item.card.card.itemCards.length})</h1>
+        );
+      })}
 
       {itemCards.map((menuItems) => {
         return (
@@ -53,7 +66,9 @@ const RestaurantDetails = () => {
             <div className="menu-left">
               <h3>{menuItems?.card?.info?.name}</h3>
               <p className="price">
-                {menuItems?.card?.info?.price?"₹" + menuItems?.card?.info?.price / 100:"₹" + menuItems?.card?.info?.defaultPrice / 100}
+                {menuItems?.card?.info?.price
+                  ? "₹" + menuItems?.card?.info?.price / 100
+                  : "₹" + menuItems?.card?.info?.defaultPrice / 100}
               </p>
               <p className="desc">{menuItems?.card?.info?.description}</p>
             </div>
