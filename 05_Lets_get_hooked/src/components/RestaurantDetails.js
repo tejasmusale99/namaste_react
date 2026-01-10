@@ -12,7 +12,7 @@ const RestaurantDetails = () => {
     menuDetails?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
       ?.card?.card?.itemCards;
 
-      console.log(menuDetails?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR)
+      console.log(menuDetails?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR.cards)
 
   if (menuDetails == null) {
     return <Skeleton avatar paragraph={{ rows: 4 }} />
@@ -53,7 +53,7 @@ const RestaurantDetails = () => {
             <div className="menu-left">
               <h3>{menuItems?.card?.info?.name}</h3>
               <p className="price">
-                {"₹" + menuItems?.card?.info?.price / 100}
+                {menuItems?.card?.info?.price?"₹" + menuItems?.card?.info?.price / 100:"₹" + menuItems?.card?.info?.defaultPrice / 100}
               </p>
               <p className="desc">{menuItems?.card?.info?.description}</p>
             </div>
