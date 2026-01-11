@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/customHooks/useRestaurantMenu";
 import { Skeleton } from "antd";
+// import CategoryItems from "./CategoryItems";
+import Restaurantcategory from "./Restaurantcategory";
 
 const RestaurantDetails = () => {
   const { resId } = useParams();
@@ -26,7 +28,7 @@ const RestaurantDetails = () => {
       }
     );
 
-  console.log(RestaurantItemCategories);
+  // console.log(RestaurantItemCategories);
 
   if (menuDetails == null) {
     return <Skeleton avatar paragraph={{ rows: 4 }} />;
@@ -55,12 +57,10 @@ const RestaurantDetails = () => {
 
       {RestaurantItemCategories.map((item) => {
         // console.log(item.card.card.itemCards[0].card.info.name);
-        return (
-       <h1>{item.card.card.title}({item.card.card.itemCards.length})</h1>
-        );
+        return <Restaurantcategory key={item.card.card.title} item={item} />;
       })}
 
-      {itemCards.map((menuItems) => {
+      {/* {itemCards.map((menuItems) => {
         return (
           <div key={menuItems?.card?.info?.id} className="menu-item">
             <div className="menu-left">
@@ -88,7 +88,7 @@ const RestaurantDetails = () => {
             </div>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 };
