@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/customHooks/useRestaurantMenu";
 import { Skeleton } from "antd";
-// import CategoryItems from "./CategoryItems";
 import Restaurantcategory from "./Restaurantcategory";
 
 const RestaurantDetails = () => {
@@ -59,36 +58,6 @@ const RestaurantDetails = () => {
         // console.log(item.card.card.itemCards[0].card.info.name);
         return <Restaurantcategory key={item.card.card.title} item={item} />;
       })}
-
-      {/* {itemCards.map((menuItems) => {
-        return (
-          <div key={menuItems?.card?.info?.id} className="menu-item">
-            <div className="menu-left">
-              <h3>{menuItems?.card?.info?.name}</h3>
-              <p className="price">
-                {menuItems?.card?.info?.price
-                  ? "₹" + menuItems?.card?.info?.price / 100
-                  : "₹" + menuItems?.card?.info?.defaultPrice / 100}
-              </p>
-              <p className="desc">{menuItems?.card?.info?.description}</p>
-            </div>
-
-            <div className="menu-right">
-              <div className="img-wrapper">
-                <img
-                  src={
-                    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/" +
-                    menuItems?.card?.info?.imageId
-                  }
-                  alt="food"
-                />
-                <button className="add-btn">ADD</button>
-              </div>
-              <p className="customisable">Customisable</p>
-            </div>
-          </div>
-        );
-      })} */}
     </div>
   );
 };

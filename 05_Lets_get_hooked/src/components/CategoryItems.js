@@ -1,8 +1,5 @@
 const CategoryItems = ({data}) => {
     console.log(data)
-
-    // card.info.id
-
     return(
        <>
        {data.map((item)=>{
