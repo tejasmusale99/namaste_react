@@ -1,12 +1,12 @@
 import { useState } from "react";
 import CategoryItems from "./CategoryItems";
 
-const Restaurantcategory = ({ item }) => {
+const Restaurantcategory = ({ item, showCategoryItems,setIsOpenIndex}) => {
 
-    const [showCategoryItems, setShowCategoryItems] = useState(false)
+    console.log(showCategoryItems)
 
     const handleClick = ()=>{
-        setShowCategoryItems(!showCategoryItems)
+        setIsOpenIndex()
     }
 
   return (

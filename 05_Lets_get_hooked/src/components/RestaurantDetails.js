@@ -2,9 +2,12 @@ import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/customHooks/useRestaurantMenu";
 import { Skeleton } from "antd";
 import Restaurantcategory from "./Restaurantcategory";
+import { useState } from "react";
 
 const RestaurantDetails = () => {
   const { resId } = useParams();
+
+  const [isOpenIndex, setIsOpenIndex] = useState(null);
 
   const menuDetails = useRestaurantMenu(resId);
 
@@ -54,9 +57,16 @@ const RestaurantDetails = () => {
         </div>
       </div>
 
-      {RestaurantItemCategories.map((item) => {
+      {RestaurantItemCategories.map((item, index) => {
         // console.log(item.card.card.itemCards[0].card.info.name);
-        return <Restaurantcategory key={item.card.card.title} item={item} />;
+        return (
+          <Restaurantcategory
+            key={item.card.card.title}
+            item={item}
+            showCategoryItems={index === isOpenIndex ? true : false}
+            setIsOpenIndex={()=>setIsOpenIndex(index)}
+          />
+        );
       })}
     </div>
   );
