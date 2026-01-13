@@ -64,7 +64,10 @@ const RestaurantDetails = () => {
             key={item.card.card.title}
             item={item}
             showCategoryItems={index === isOpenIndex ? true : false}
-            setIsOpenIndex={()=>setIsOpenIndex(index)}
+            // setIsOpenIndex={()=>setIsOpenIndex(index)}
+            setIsOpenIndex={() =>
+              setIsOpenIndex((prev) => (prev === index ? null : index))
+            }
           />
         );
       })}
