@@ -11,7 +11,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filtredRestro, setFiltredRestro] = useState([]);
 
-console.log(listOfRestro)
+// console.log(listOfRestro)
 
 const OfferCard = OfferRestaurantCard(RestaurantCard) 
 

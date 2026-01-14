@@ -1,10 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import UserContext from "../utils/context/UserContext";
 
 const OfflineGame = () => {
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(10);
   const [gameOver, setGameOver] = useState(false);
 
+  const userName = useContext(UserContext)
+
+  console.log(userName);
+  
   useEffect(() => {
     if (timeLeft === 0) {
       setGameOver(true);
@@ -32,7 +37,7 @@ const OfflineGame = () => {
 
   return (
     <div style={{ textAlign: "center", padding: "40px" }}>
-      <h1>📴 You are Offline</h1>
+      <h1>📴 You are Offline {userName.loggedInUser}</h1>
       <h2>🎮 Click Game</h2>
 
       <p>⏱ Time Left: {timeLeft}s</p>

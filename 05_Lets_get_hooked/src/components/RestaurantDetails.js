@@ -12,9 +12,9 @@ const RestaurantDetails = () => {
   const menuDetails = useRestaurantMenu(resId);
 
   const info = menuDetails?.data?.cards[2]?.card?.card?.info;
-  const itemCards =
-    menuDetails?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
-      ?.card?.card?.itemCards;
+  // const itemCards =
+  //   menuDetails?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
+  //     ?.card?.card?.itemCards;
 
   // console.log(
   //   menuDetails?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR.cards
