@@ -9,6 +9,7 @@ import Error from "./components/Error";
 import RestaurantDetails from "./components/RestaurantDetails";
 import { lazy, Suspense } from "react";
 import "./index.css";  
+import UserContext from "./utils/context/UserContext";
 
 const Cart = lazy(()=>import("./components/Cart"))
 
@@ -16,8 +17,11 @@ const Cart = lazy(()=>import("./components/Cart"))
 const AppLayout = () => {
   return (
     <div className="applayout">
+      <UserContext.Provider value={{loggedInUser:"Tejas"}}>
       <Header />
+       </UserContext.Provider>
       <Outlet />
+     
     </div>
   );
 };
