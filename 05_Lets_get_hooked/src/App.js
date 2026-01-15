@@ -1,28 +1,27 @@
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
-// console.log(logoImage)
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantDetails from "./components/RestaurantDetails";
 import { lazy, Suspense } from "react";
-import "./index.css";  
+import "./index.css";
 import UserContext from "./utils/context/UserContext";
 
-const Cart = lazy(()=>import("./components/Cart"))
-
+const Cart = lazy(() => import("./components/Cart"));
 
 const AppLayout = () => {
   return (
-    <div className="applayout">
-      <UserContext.Provider value={{loggedInUser:"Tejas"}}>
-      <Header />
-       </UserContext.Provider>
-      <Outlet />
-     
-    </div>
+    <UserContext.Provider value={{ loggedInUser: "Elon Musk" }}>
+      <div className="applayout">
+        <UserContext.Provider value={{ loggedInUser: "Tejas Musale" }}>
+          <Header />
+        </UserContext.Provider>
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 
@@ -46,7 +45,18 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "cart",
-        element: <Suspense fallback={<><h1>Loading....</h1></>}> <Cart /></Suspense>,
+        element: (
+          <Suspense
+            fallback={
+              <>
+                <h1>Loading....</h1>
+              </>
+            }
+          >
+            {" "}
+            <Cart />
+          </Suspense>
+        ),
       },
       {
         path: "/restaurants/:resId",
