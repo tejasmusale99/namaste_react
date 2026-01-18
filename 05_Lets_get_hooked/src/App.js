@@ -9,11 +9,14 @@ import RestaurantDetails from "./components/RestaurantDetails";
 import { lazy, Suspense } from "react";
 import "./index.css";
 import UserContext from "./utils/context/UserContext";
+import {Provider} from 'react-redux'
+import appStore from "./utils/store/appStore";
 
 const Cart = lazy(() => import("./components/Cart"));
 
 const AppLayout = () => {
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{ loggedInUser: "Elon Musk" }}>
       <div className="applayout">
         <UserContext.Provider value={{ loggedInUser: "Tejas Musale" }}>
@@ -22,6 +25,7 @@ const AppLayout = () => {
         <Outlet />
       </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 
