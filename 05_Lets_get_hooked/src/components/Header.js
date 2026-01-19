@@ -30,7 +30,7 @@ console.log(cartItems)
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/cart" className="cart">
-          🛒 {}
+          🛒 {cartItems.length}
         </Link>
         <Link to="/" className="cart">
           {onlineStatus ? "Online: 🟢" : "Offline: 🔴"}
