@@ -1,5 +1,14 @@
+import { useDispatch } from "react-redux";
+import {addToCart} from '../utils/features/cartSlice'
+
 const CategoryItems = ({data}) => {
     // console.log(data)
+
+    const dispatch = useDispatch()
+
+    const CartHandleCLick = () =>{
+      dispatch(addToCart("pizza","biryani","burger"))
+    }
     return(
        <>
        {data.map((item)=>{
@@ -24,7 +33,7 @@ const CategoryItems = ({data}) => {
                   }
                   alt="food"
                 />
-                <button className="add-btn">ADD</button>
+                <button className="add-btn" onClick={CartHandleCLick}>ADD</button>
               </div>
               {/* <p className="customisable">Customisable</p> */}
             </div>
