@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logoImage from "url:/SwaadpointLogo.png";
 import useOnlineOffline from "../utils/customHooks/useOnlineOffline";
 import UserContext from "../utils/context/UserContext";
+import { useSelector } from 'react-redux'
 
 const Header = () => {
   const [isLogIn, setIsLogIn] = useState(true);
@@ -11,8 +12,11 @@ const Header = () => {
 
   const {loggedInUser} = useContext(UserContext)
 
-  console.log(loggedInUser);
+  // console.log(loggedInUser);
   
+const cartItems = useSelector((store)=>store.cart.items)
+
+console.log(cartItems)
 
   return (
     <header className="header">
@@ -26,7 +30,7 @@ const Header = () => {
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/cart" className="cart">
-          🛒 Cart
+          🛒 {}
         </Link>
         <Link to="/" className="cart">
           {onlineStatus ? "Online: 🟢" : "Offline: 🔴"}
