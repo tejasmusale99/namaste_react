@@ -1,5 +1,5 @@
 const CategoryItems = ({data}) => {
-    console.log(data)
+    // console.log(data)
     return(
        <>
        {data.map((item)=>{
@@ -26,7 +26,7 @@ const CategoryItems = ({data}) => {
                 />
                 <button className="add-btn">ADD</button>
               </div>
-              <p className="customisable">Customisable</p>
+              {/* <p className="customisable">Customisable</p> */}
             </div>
           </div>
         );

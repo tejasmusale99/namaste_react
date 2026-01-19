@@ -57,7 +57,6 @@ const appRouter = createBrowserRouter([
               </>
             }
           >
-            {" "}
             <Cart />
           </Suspense>
         ),

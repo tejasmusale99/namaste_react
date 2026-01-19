@@ -3,7 +3,7 @@ import CategoryItems from "./CategoryItems";
 
 const Restaurantcategory = ({ item, showCategoryItems,setIsOpenIndex}) => {
 
-    console.log(showCategoryItems)
+    // console.log(showCategoryItems)
 
     const handleClick = ()=>{
         setIsOpenIndex()
