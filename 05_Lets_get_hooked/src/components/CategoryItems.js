@@ -6,8 +6,8 @@ const CategoryItems = ({data}) => {
 
     const dispatch = useDispatch()
 
-    const CartHandleCLick = () =>{
-      dispatch(addToCart("pizza","biryani","burger"))
+    const CartHandleCLick = (data) =>{
+      dispatch(addToCart(data))
     }
     return(
        <>
@@ -33,7 +33,7 @@ const CategoryItems = ({data}) => {
                   }
                   alt="food"
                 />
-                <button className="add-btn" onClick={CartHandleCLick}>ADD</button>
+                <button className="add-btn" onClick={()=>CartHandleCLick(data)}>ADD</button>
               </div>
               {/* <p className="customisable">Customisable</p> */}
             </div>
