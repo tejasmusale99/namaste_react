@@ -33,7 +33,7 @@ const CategoryItems = ({data}) => {
                   }
                   alt="food"
                 />
-                <button className="add-btn" onClick={()=>CartHandleCLick(data)}>ADD</button>
+                <button className="add-btn" onClick={()=>CartHandleCLick(item.card)}>ADD</button>
               </div>
               {/* <p className="customisable">Customisable</p> */}
             </div>
