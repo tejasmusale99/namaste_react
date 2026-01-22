@@ -4,11 +4,16 @@ import { clearCart } from "../utils/features/cartSlice";
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const clearClickHandler =()=>{
-    dispatch(clearCart())
-  }
+  const clearClickHandler = () => {
+    dispatch(clearCart());
+  };
+
+  // ✅ Calculate totals dynamically
+  const itemsTotal = cartItems.reduce((acc, item) => acc + item.info.price / 100, 0);
+  const deliveryFee = cartItems.length > 0 ? 40 : 0; // Only charge delivery if cart has items
+  const totalAmount = itemsTotal + deliveryFee;
 
   return (
     <div className="min-h-screen bg-gray-100 px-4 py-8">
@@ -19,7 +24,7 @@ const Cart = () => {
         <button
           className="border bg-orange-500 text-white px-4 py-2 rounded-lg
                      hover:bg-orange-500 transition cursor-pointer"
-                     onClick={clearClickHandler}
+          onClick={clearClickHandler}
         >
           Clear Cart
         </button>
@@ -32,9 +37,7 @@ const Cart = () => {
             Cart Items ({cartItems.length})
           </h2>
 
-          {
-            cartItems.length === 0 && <h1>Your Cart is empty</h1>
-          }
+          {cartItems.length === 0 && <h1>Your Cart is empty</h1>}
 
           {cartItems.map((cartItem, index) => (
             <div
@@ -60,19 +63,19 @@ const Cart = () => {
           <div className="space-y-3 text-gray-700">
             <div className="flex justify-between">
               <span>Items Total</span>
-              <span>₹476</span>
+              <span>₹{itemsTotal}</span>
             </div>
 
             <div className="flex justify-between">
               <span>Delivery Fee</span>
-              <span>₹40</span>
+              <span>₹{deliveryFee}</span>
             </div>
 
             <hr />
 
             <div className="flex justify-between font-bold text-lg">
               <span>Total Amount</span>
-              <span>₹516</span>
+              <span>₹{totalAmount}</span>
             </div>
           </div>
 
