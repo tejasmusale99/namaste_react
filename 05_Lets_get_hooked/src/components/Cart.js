@@ -46,12 +46,13 @@ const Cart = () => {
             >
               <div>
                 <h3 className="font-medium text-lg">{cartItem.info.name}</h3>
+                <p className="text-sm">{cartItem.info.description}</p>
                 <p className="text-gray-600">₹{cartItem.info.price / 100}</p>
               </div>
 
-              <span className="text-sm bg-gray-200 px-3 py-1 rounded-full">
+              {/* <span className="text-sm bg-gray-200 px-3 py-1 rounded-full">
                 Qty: 1
-              </span>
+              </span> */}
             </div>
           ))}
         </div>
