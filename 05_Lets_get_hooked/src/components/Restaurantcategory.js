@@ -11,7 +11,7 @@ const Restaurantcategory = ({ item, showCategoryItems,setIsOpenIndex}) => {
 
   return (
     <div  className="border-b">
-      <div className="w-full flex items-center justify-between px-4 py-5">
+      <div className="w-full flex items-center justify-between px-4 py-5" >
         <h2 className="text-lg font-bold text-gray-900">
           {item.card.card.title}
           <span className="font-semibold">
