@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import {addToCart} from '../utils/features/cartSlice'
 
 const CategoryItems = ({data}) => {
-    // console.log(data)v
+    // console.log(data)
 
     const dispatch = useDispatch()
 
@@ -35,7 +35,6 @@ const CategoryItems = ({data}) => {
                 />
                 <button className="add-btn" onClick={()=>CartHandleCLick(item.card)}>ADD</button>
               </div>
-              {/* <p className="customisable">Customisable</p> */}
             </div>
           </div>
         );

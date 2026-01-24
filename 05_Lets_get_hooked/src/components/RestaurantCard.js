@@ -1,5 +1,5 @@
 import { cdnUrl } from "../utils/constants.js";
-// import "../../style.css"
+
 const RestaurantCard = (props) => {
   // console.log(props.res.info)
   const {
