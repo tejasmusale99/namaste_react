@@ -4,5 +4,5 @@ test("calculate the sum of two number ", ()=>{
     const result = sum(2,3)
 
     //assertion
-    expect(result).toBe(4)
+    expect(result).toBe(5)
 })
