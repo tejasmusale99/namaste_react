@@ -8,3 +8,28 @@ import "@testing-library/jest-dom"
 
       expect(heading).toBeInTheDocument()
     })
+
+    test("should load button text of contact us component", ()=>{
+        render(<Contact />)
+      const  buttonText = screen.getByText("Send Message")
+
+      // Assertion 
+
+      expect(buttonText).toBeInTheDocument()
+
+    })
+
+    test("should load button from contact us component", ()=>{
+      render(<Contact />)
+      const button = screen.getByRole("button");
+
+      expect(button).toBeInTheDocument()
+    })
+
+    test("should load all inputs from conatct component", ()=>{
+      render(<Contact />)
+
+      const inputs = screen.getAllByRole("textbox")
+
+      expect(inputs.length).toBe(3)
+    })
