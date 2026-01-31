@@ -2,7 +2,9 @@ import { render,screen } from '@testing-library/react'
 import Contact from '../Contact'
 import "@testing-library/jest-dom"
 
-    test("should load contact us component", ()=>{
+
+describe("group of contact us test cases", ()=>{
+   test("should load contact us component", ()=>{
         render(<Contact />)
       const  heading = screen.getByRole("heading")
 
@@ -42,3 +44,6 @@ import "@testing-library/jest-dom"
 
       expect(palceholderText).toBeInTheDocument()
     })
+})
+
+ 
