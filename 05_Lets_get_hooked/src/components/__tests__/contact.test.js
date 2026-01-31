@@ -36,7 +36,7 @@ describe("group of contact us test cases", ()=>{
       expect(inputs.length).toBe(3)
     })
 
-// We can write (it) and (test) also it's a same thing 
+// We can also write (it) and (test) also it's a same thing 
 
     it("should load all palceholderText from conatct component", ()=>{
       render(<Contact />)
