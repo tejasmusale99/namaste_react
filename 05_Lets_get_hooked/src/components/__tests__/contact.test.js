@@ -36,14 +36,19 @@ describe("group of contact us test cases", ()=>{
       expect(inputs.length).toBe(3)
     })
 
+// We can write (it) and (test) also it's a same thing 
 
-    test("should load all palceholderText from conatct component", ()=>{
+    it("should load all palceholderText from conatct component", ()=>{
       render(<Contact />)
 
       const palceholderText = screen.getByPlaceholderText(/Enter your name/i) //i means case sesitive
 
       expect(palceholderText).toBeInTheDocument()
     })
+
+    
+
+    
 })
 
  
