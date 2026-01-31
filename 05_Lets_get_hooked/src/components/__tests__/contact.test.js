@@ -33,3 +33,12 @@ import "@testing-library/jest-dom"
 
       expect(inputs.length).toBe(3)
     })
+
+
+    test("should load all palceholderText from conatct component", ()=>{
+      render(<Contact />)
+
+      const palceholderText = screen.getByPlaceholderText(/Enter your name/i) //i means case sesitive
+
+      expect(palceholderText).toBeInTheDocument()
+    })
