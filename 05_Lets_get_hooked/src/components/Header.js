@@ -1,13 +1,13 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 // import logoImage from "url:/SwaadpointLogo.png";
-const logoUrl = new URL("../assets/SwaadpointLogo.png", import.meta.url).href;
-// import logoImage from "../assets/SwaadpointLogo.png";
+// const logoUrl = new URL("../assets/SwaadpointLogo.png", import.meta.url).href;
+import { logoUrl } from "../utils/constants.js";
 import useOnlineOffline from "../utils/customHooks/useOnlineOffline";
 import UserContext from "../utils/context/UserContext";
 import { useSelector } from "react-redux";
 
-console.log(logoUrl);
+console.log(logoUrl.default); // ✅ string
 
 const Header = () => {
   const [isLogIn, setIsLogIn] = useState(true);
@@ -20,17 +20,15 @@ const Header = () => {
 
   const cartItems = useSelector((store) => store.cart.items);
 
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <header className="header">
       <div className="logo-container">
-        <Link to="http://localhost:1234">
+        <Link to="/">
           <img src={logoUrl} alt="Logo" className="logo" />
         </Link>
-        <Link to="/">
-          <img src="/SwaadpointLogo.png" alt="Logo" className="logo" />
-        </Link>
+
       </div>
       <nav className="nav">
         <Link to="/">Home</Link>
