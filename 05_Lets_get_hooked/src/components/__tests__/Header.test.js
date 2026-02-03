@@ -1,6 +1,6 @@
 import { MemoryRouter, BrowserRouter} from "react-router-dom";
 import Header from "../Header";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import appStore from "../../utils/store/appStore";
 import "@testing-library/jest-dom";
@@ -44,4 +44,23 @@ it("it should load header component with log in button", () => {
 
   const cartText = screen.getByText(/0/);
   expect(cartText).toBeInTheDocument();
+});
+
+it("it should load header component and change log in to logout onClick", () => {
+  render(
+    <Provider store={appStore}>
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>
+    </Provider>,
+  );
+
+
+  const LogInButton = screen.getByRole("button", {name:/Log In/i});
+
+  fireEvent.click(LogInButton)
+
+  const LogOutButton = screen.getByRole("button", {name:/Log out/i});
+
+  expect(LogOutButton).toBeInTheDocument();
 });
