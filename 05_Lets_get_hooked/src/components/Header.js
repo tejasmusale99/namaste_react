@@ -7,7 +7,6 @@ import useOnlineOffline from "../utils/customHooks/useOnlineOffline";
 import UserContext from "../utils/context/UserContext";
 import { useSelector } from "react-redux";
 
-console.log(logoUrl.default); // ✅ string
 
 const Header = () => {
   const [isLogIn, setIsLogIn] = useState(true);

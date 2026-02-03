@@ -1,9 +1,9 @@
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter, BrowserRouter} from "react-router-dom";
 import Header from "../Header";
-import { render,screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import appStore from "../../utils/store/appStore";
-import "@testing-library/jest-dom"
+import "@testing-library/jest-dom";
 
 jest.mock("../../utils/constants.js", () => ({
   logoUrl: "test-logo.png",
@@ -18,17 +18,16 @@ afterAll(() => {
   console.warn.mockRestore();
 });
 
-it("it should load header component with log in button", () => {
+it("it should load header component with logo", () => {
   render(
     <Provider store={appStore}>
-       <MemoryRouter>
+      <BrowserRouter>
         <Header />
-      </MemoryRouter>
+      </BrowserRouter>
     </Provider>,
   );
 
-    // check logo exists
+  // check logo exists
   const logo = screen.getByAltText(/logo/i);
   expect(logo).toBeInTheDocument();
-
 });
