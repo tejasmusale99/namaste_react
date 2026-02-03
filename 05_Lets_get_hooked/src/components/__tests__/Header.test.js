@@ -31,3 +31,17 @@ it("it should load header component with logo", () => {
   const logo = screen.getByAltText(/logo/i);
   expect(logo).toBeInTheDocument();
 });
+
+it("it should load header component with log in button", () => {
+  render(
+    <Provider store={appStore}>
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>
+    </Provider>,
+  );
+
+
+  const cartText = screen.getByText(/0/);
+  expect(cartText).toBeInTheDocument();
+});
