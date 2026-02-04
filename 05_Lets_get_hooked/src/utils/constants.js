@@ -7,7 +7,14 @@ export const cdnUrl = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lo
 // ).href;
 
 
-  export const logoUrl =
-  typeof window === "undefined"
-    ? "test-logo.png" // fallback for Jest/Node
-    : new URL("../assets/SwaadpointLogo.png", import.meta.url).href;
+//   export const logoUrl = (() => {
+//   if (typeof window === "undefined") {
+    
+//     return "test-logo.png";
+//   }
+
+
+//   return new URL("../assets/SwaadpointLogo.png", import.meta.url).href;
+// })();
+
+export const logoUrl = "test-logo.png";
