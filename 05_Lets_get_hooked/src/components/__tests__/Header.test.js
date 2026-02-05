@@ -1,66 +1,49 @@
-import { MemoryRouter, BrowserRouter} from "react-router-dom";
-import Header from "../Header";
+import { BrowserRouter } from "react-router-dom";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import appStore from "../../utils/store/appStore";
 import "@testing-library/jest-dom";
 
 jest.mock("../../utils/constants.js", () => ({
-  logoUrl: "test-logo.png",
+  LOGO_URL: "test-logo.png",
 }));
 
-// Silence React Router warnings
-beforeAll(() => {
-  jest.spyOn(console, "warn").mockImplementation(() => {});
-});
+import Header from "../Header";
 
-afterAll(() => {
-  console.warn.mockRestore();
-});
-
-it("it should load header component with logo", () => {
+it("should load header component with logo", () => {
   render(
     <Provider store={appStore}>
       <BrowserRouter>
         <Header />
       </BrowserRouter>
-    </Provider>,
+    </Provider>
   );
 
-  // check logo exists
   const logo = screen.getByAltText(/logo/i);
   expect(logo).toBeInTheDocument();
 });
 
-it("it should load header component with log in button", () => {
+it("should load header component with cart count", () => {
   render(
     <Provider store={appStore}>
       <BrowserRouter>
         <Header />
       </BrowserRouter>
-    </Provider>,
+    </Provider>
   );
 
-
-  const cartText = screen.getByText(/0/);
-  expect(cartText).toBeInTheDocument();
+  expect(screen.getByText(/0/)).toBeInTheDocument();
 });
 
-it("it should load header component and change log in to logout onClick", () => {
+it("should change login to logout on click", () => {
   render(
     <Provider store={appStore}>
       <BrowserRouter>
         <Header />
       </BrowserRouter>
-    </Provider>,
+    </Provider>
   );
 
-
-  const LogInButton = screen.getByRole("button", {name:/Log In/i});
-
-  fireEvent.click(LogInButton)
-
-  const LogOutButton = screen.getByRole("button", {name:/Log out/i});
-
-  expect(LogOutButton).toBeInTheDocument();
+  fireEvent.click(screen.getByRole("button", { name: /log in/i }));
+  expect(screen.getByRole("button", { name: /log out/i })).toBeInTheDocument();
 });

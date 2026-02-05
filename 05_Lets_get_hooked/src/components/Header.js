@@ -2,7 +2,8 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 // import logoImage from "url:/SwaadpointLogo.png";
 // const logoUrl = new URL("../assets/SwaadpointLogo.png", import.meta.url).href;
-import { logoUrl } from "../utils/constants.js";
+
+import { LOGO_URL } from "../utils/constants.js";
 import useOnlineOffline from "../utils/customHooks/useOnlineOffline";
 import UserContext from "../utils/context/UserContext";
 import { useSelector } from "react-redux";
@@ -25,9 +26,9 @@ const Header = () => {
     <header className="header">
       <div className="logo-container">
         <Link to="/">
-          <img src={logoUrl} alt="Logo" className="logo" />
+          {/* <img src={logoImage} alt="Logo" className="logo" /> */}
+          <img src={LOGO_URL} alt="logo" className="logo"  />
         </Link>
-
       </div>
       <nav className="nav">
         <Link to="/">Home</Link>
