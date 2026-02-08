@@ -27,6 +27,9 @@ const fetchData = async () => {
 
   const json = await res.json();
 
+  // console.log(json);
+  
+
   const restaurantCard = json?.data?.cards?.find(
     (card) =>
       card?.card?.card?.gridElements?.infoWithStyle?.restaurants
