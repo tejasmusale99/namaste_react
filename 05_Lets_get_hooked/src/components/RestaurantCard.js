@@ -13,7 +13,7 @@ const RestaurantCard = (props) => {
   } = props.res.info;
 
   return (
-    <div className="restaurant-card">
+    <div className="restaurant-card" data-testid="restroCard" >
       <div className="card-image">
         <img src={cdnUrl + cloudinaryImageId} alt="The Spice Hub" />
         {/* {aggregatedDiscountInfoV3?.header && <span className="discount">{aggregatedDiscountInfoV3?.header} </span> }  */}

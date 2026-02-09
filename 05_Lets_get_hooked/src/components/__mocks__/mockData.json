@@ -1,0 +1,51 @@
+{
+  "data": {
+    "cards": [
+      {
+        "card": {
+          "card": {
+            "gridElements": {
+              "infoWithStyle": {
+                "restaurants": [
+                  {
+                    "info": {
+                      "id": "1",
+                      "name": "Pizza Hut",
+                      "avgRating": 4.5,
+                      "cuisines": ["Italian"],
+                      "costForTwo": "₹400",
+                      "sla": { "deliveryTime": 30 },
+                      "cloudinaryImageId": "img1"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "2",
+                      "name": "Dominos Pizza",
+                      "avgRating": 4.3,
+                      "cuisines": ["Italian"],
+                      "costForTwo": "₹350",
+                      "sla": { "deliveryTime": 25 },
+                      "cloudinaryImageId": "img2"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "3",
+                      "name": "La Pinoz Pizza",
+                      "avgRating": 4.2,
+                      "cuisines": ["Italian"],
+                      "costForTwo": "₹300",
+                      "sla": { "deliveryTime": 28 },
+                      "cloudinaryImageId": "img3"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

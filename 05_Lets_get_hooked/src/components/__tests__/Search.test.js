@@ -1,6 +1,7 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import Body from "../Body";
-import MockData from "../__mocks__/fetchResMock.json";
+// import MockData from "../__mocks__/fetchResMock.json";
+import MockData from "../__mocks__/mockData.json";
 import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 
@@ -11,19 +12,27 @@ jest.mock("../../utils/customHooks/useOnlineOffline", () => {
 global.fetch = jest.fn(() =>
   Promise.resolve({
     json: () => Promise.resolve(MockData),
-  })
+  }),
 );
 
 it("should render the body component", async () => {
   render(
     <BrowserRouter>
       <Body />
-    </BrowserRouter>
+    </BrowserRouter>,
   );
 
-  const searchBtn = await screen.findByRole("button", {
-    name: /search/i,
+
+ const searchInput = await screen.findByTestId("inputSearch");
+const searchBtn = screen.getByRole("button", { name: /search/i });
+
+
+  fireEvent.change(searchInput, {
+    target: { value: "pizza" },
   });
 
-  expect(searchBtn).toBeInTheDocument();
+  fireEvent.click(searchBtn);
+
+  const cards = await screen.findAllByTestId("restroCard");
+  expect(cards.length).toBe(3);
 });

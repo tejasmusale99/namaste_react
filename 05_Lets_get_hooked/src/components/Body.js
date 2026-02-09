@@ -43,6 +43,7 @@ const fetchData = async () => {
 };
 
 
+
   // const fetchData = async () => {
   //   const fetchData = await fetch(
   //     "https://proxy.corsfix.com/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.9728896&lng=73.8229516&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
@@ -77,6 +78,7 @@ const fetchData = async () => {
       <div className="search-filter-row">
         <div className="search-bar">
           <input
+           data-testid="inputSearch"
             type="text"
             placeholder="Search for restaurants"
             value={searchText}
