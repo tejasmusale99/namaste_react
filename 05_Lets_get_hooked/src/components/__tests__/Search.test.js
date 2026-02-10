@@ -15,7 +15,7 @@ global.fetch = jest.fn(() =>
   }),
 );
 
-it("should render the body component", async () => {
+it("should render the body component and test search component with restro cards", async () => {
   render(
     <BrowserRouter>
       <Body />
