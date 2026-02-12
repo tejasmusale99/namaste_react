@@ -55,6 +55,4 @@ fireEvent.click(TopRatedBtn)
 const topRatedRestro = screen.getAllByTestId("restroCard")
 expect(topRatedRestro.length).toBe(1)
 
-// expect(TopRatedBtn).toBeInTheDocument()
-
 });
