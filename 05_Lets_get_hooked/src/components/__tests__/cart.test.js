@@ -5,6 +5,7 @@ import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import appStore from '../../utils/store/appStore.js'
+import Header  from "../Header.js";
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
@@ -16,6 +17,7 @@ it("should load veg pizza items when accordion is clicked", async () => {
   render(
     <BrowserRouter>
       <Provider store={appStore}>
+        <Header />
         <RestaurantDetails />
       </Provider>
     </BrowserRouter>,
@@ -28,4 +30,19 @@ it("should load veg pizza items when accordion is clicked", async () => {
   const foodItems = await screen.findAllByTestId("foodItems");
 
   expect(foodItems.length).toBe(13);
+
+  const addBtns = screen.getAllByRole("button", {name:/ADD +/i})
+
+ fireEvent.click(addBtns[0])
+
+ const oneCartItemAdded = screen.getByText("🛒 1")
+ 
+ expect(oneCartItemAdded).toBeInTheDocument()
+
+ fireEvent.click(addBtns[1])
+
+ const twoCartItemAdded = screen.getByText("🛒 2")
+ 
+ expect(twoCartItemAdded).toBeInTheDocument()
+
 });
