@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import appStore from '../../utils/store/appStore.js'
 import Header  from "../Header.js";
+import Cart from '../Cart.js'
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
@@ -19,6 +20,7 @@ it("should load veg pizza items when accordion is clicked", async () => {
       <Provider store={appStore}>
         <Header />
         <RestaurantDetails />
+        <Cart />
       </Provider>
     </BrowserRouter>,
   );
@@ -44,5 +46,8 @@ it("should load veg pizza items when accordion is clicked", async () => {
  const twoCartItemAdded = screen.getByText("🛒 2")
  
  expect(twoCartItemAdded).toBeInTheDocument()
+
+ const cartItems = screen.getAllByTestId("cartItem");
+ expect(cartItems.length).toBe(2);
 
 });
