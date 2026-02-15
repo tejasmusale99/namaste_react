@@ -5,22 +5,22 @@ import "@testing-library/jest-dom"
 
 describe("group of contact us test cases", ()=>{
 
-  beforeAll(()=>{
-    console.log("Before All")
-  })
+  // beforeAll(()=>{
+  //   console.log("Before All")
+  // })
 
-  beforeEach(()=>{
-    console.log("Before Each");
-  })
+  // beforeEach(()=>{
+  //   console.log("Before Each");
+  // })
 
-  afterAll(()=>{
-    console.log("Afeter All");
-  })
+  // afterAll(()=>{
+  //   console.log("Afeter All");
+  // })
 
-  afterEach(()=>{
-    console.log("After Each");
+  // afterEach(()=>{
+  //   console.log("After Each");
     
-  })
+  // })
 
    test("should load contact us component", ()=>{
         render(<Contact />)
