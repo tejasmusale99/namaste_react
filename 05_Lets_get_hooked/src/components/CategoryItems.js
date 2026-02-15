@@ -13,7 +13,7 @@ const CategoryItems = ({data}) => {
        <>
        {data.map((item)=>{
         return (
-          <div key={item?.card?.info?.id} className="menu-item">
+          <div key={item?.card?.info?.id} className="menu-item" data-testid="foodItems">
             <div className="menu-left">
               <h3>{item?.card?.info?.name}</h3>
               <p className="price">
