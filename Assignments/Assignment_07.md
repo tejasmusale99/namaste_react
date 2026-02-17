@@ -50,3 +50,48 @@ useEffect(() => { console.log("Effect runs"); }, [dep1, dep2]);
 - Makes our app slow because behind the scenes, there are a lot of network calls being made and every time, the entire app gets reloaded.
 
 - **This is the benefit of single page applications. We have all the components on the client side. They just get interchanged based on the routes.**
+
+### Q5. What are the steps to create routes in a React app?
+
+- Step1: We imported the createBrowserRouter from 'react-router-dom'
+- Step2: We call createBrowserRouter(), it takes some configuration in it. This configuration is a list/array of objects Each object defines a different path and what to render on that path
+- Step3: After creating the router configuration, we need to provide it to render the things as per the path So we import RouterProvider from react-router-dom package
+- We do `root.render(<RouterProvider route = {ourRouteConfiguration}/>) instead of root.render() directly`
+
+```html
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+const appRouter = createBrowserRouter([
+       {
+              path:"/",
+              element:<AppLayout/>,
+              errorElement:<Error/>
+       },
+       {
+              path:"/about",
+              element:<About/>,
+              errorElement:<Error/>
+       }
+]);
+'
+'
+'
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<RouterProvider router = {appRouter}/>);
+```
+
+### Q6. How to handle route errors in React app?
+
+- Suppose we try to go on a wrong route, which has not been defined. Such a case must be handled gracefully.
+- React-Router-DOM itself handles the error somewhat but not in a gracefull and fancy way.
+- We are provided with the useRouteError() hook.
+- It returns the error object from which we can access the various details of the error and then we can display some graceful UI page with the error details.
+
+
+### Q7 What is the use case of the Link component?
+
+- <Link></Link> component is a superpower given to us by 'react-router-dom'.
+- When we wrap something in it, eg: <Link>About Us</Link>, if About Us is clicked, the page won't reload. Instead, the <About/> Component will be loaded in the DOM.
+- It helps in avoiding full page reload and just refreshing the components that are required.
+- is a wrapper over anchor tag. It tells the router-dom not to reload the entire page when that path is visited.
+- If we see in the Elements tab, we won't see , we will see <a></a> tag. This proves that behind the scenes uses anchor tag.
+- It makes our React App really fast and performant.
