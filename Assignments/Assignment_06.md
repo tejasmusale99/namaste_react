@@ -63,20 +63,43 @@
 - It allows developers to dynamically control what appears on the screen depending on the state of the application or specific variables.
 
 ```html
-import React from "react";
-
-function ExampleComponent({ isLoggedIn }) {
-  return <div>{isLoggedIn ? <p>Welcome back!</p> : <p>Please log in.</p>}</div>;
-}
+import React from "react"; function ExampleComponent({ isLoggedIn }) { return
+<div>
+  {isLoggedIn ?
+  <p>Welcome back!</p>
+  :
+  <p>Please log in.</p>
+  }
+</div>
+; }
 ```
+
 - In this example, the component ExampleComponent renders different messages based on the value of the isLoggedIn prop. If isLoggedIn is true, it displays "Welcome back!", otherwise, it shows "Please log in."
 
- ### Q9. What is the CORS?
- - It stands for Cross-Origin Resource Sharing.
- - Browsers do not allow us to call an API present on other origin from our origin. This is a web standard that makes resource sharing safe.
+### Q9. What is the CORS?
+
+- It stands for Cross-Origin Resource Sharing.
+- Browsers do not allow us to call an API present on other origin from our origin. This is a web standard that makes resource sharing safe.
 - So, when we attempt to access a resource present on another origin from our origin, the browser imposes a CORS policy and blocks us from doing so.
 - Another origin means: another Domain/Port/Protocol.
 - The origin A(browser) sends a pre-flight request to the origin B(server) before actually making the API call for fetching the resource.
 - o the server then sends back additional HTTP Headers to the browser using which browser knows whther or not resource sharing is safe.
 - After this verification, the actual API call is made from the browser.
 - Additional HTTP headers are: Access-Control-Allow-Origin, Accept-Control-Allow-Methods etc.
+
+### Q10. What is async and await?
+
+**async Function:**
+
+The async keyword is used to define a function as asynchronous. An async function always returns a promise, and the value of the promise will be whatever the async function returns explicitly, or it will be resolved with the value the async function resolves to.
+
+**await:**
+
+The await keyword is used to pause the execution of an async function until a promise is resolved. It can only be used inside an async function. When await is used, the function will wait for the promise to settle (either resolve or reject) and will then resume execution.
+
+### Q11. What is the use of const json = await data.json()?
+
+- This statement actually converts the response Stream of data fetched from the API into a JS object.
+- The json() function returns a promise which eventually resolves to a JS object.
+- Note that despite the method being named json(), the result is not JSON but is instead the result of taking JSON as input and parsing it to produce a JavaScript object.
+- We use it to get a JS object of restaurants which can be used to set the state variable resInfo.
