@@ -37,3 +37,60 @@ Eg -
   <Grocery/>
 </Suspense>
 ```
+
+### Q3. Why did we get this error: "A component suspended while responding to synchronous input."? How does Suspense fix this?
+
+- This error occurs because React suspended the rendering of the component since its code was not present in the browser at the time of rendering.
+- React waited for none and immediately tried to render the component but could not find its code and therefore, could not render it.
+- This is resolved by <Suspense> component given by react package.
+- We can wrap the lazy loaded component into it and pass a fallback prop. This fallback prop will tell React what to render temporarily in the mean time when the lazy loaded component is being loaded.
+- We pass any JSX code or any Shimmer component as a value in the fallback prop to be rendered as the fallback screen on the UI. This way Suspense helps resolve the error, and it shows the fallback screen on the UI for a few seconds.
+
+### Q4. Advantages and disadvantages of using this code splitting pattern?
+
+**Advantages:**
+- Reduced Initial Load Time
+- Improved Performance
+- Optimized Bundle Size
+- Better Resource Management
+
+**Disadvantages:**
+- Complexity
+- Potential Overhead
+- Increased Bundle Size
+- Compatibility Issues
+
+### Q5. What is Single Responsibility Principle?
+
+- If we have a function, a class, or a single entity in our app, it
+should have a single responsibility.
+- For example, <Header> component in our app should have only one
+responsibility i.e. to display the header on the application.
+- If we have a component which is doing multiple things, then we
+should divide that component into multiple components where
+each one of them has a single responsibility.
+- Breaking down the code into small modules -> Modularity
+
+- Eg - In our apps, we should have each entity/ component concerned with its own single responsibility. Eg: <RestaurantCard/> componeont should be just concerned with rendering the JSX for the Restaurant card. It should not be concerned about fetching those restaurant details from an API.
+
+### Q6. What is Modularity of Code and how does it help?
+
+- Modularity means breaking our code into different small modules that are related to each other.
+- Breaking the code into smaller pieces makes it more Reusable, Maintainable and more Testable.
+
+***How more Reusable?***
+- If we encounter any bug in a particular functionality of our Modular code, we have a localised bug i.e. we can easily figure out that the bug arises from which module. Now we can simply test that component/module and resolve the bug. Otherwise, we would have to find the bug in that one single big module of the app, which would be very difficult. Thus Modularity makes our code more Testable!
+
+### Q7. What are Custom Hooks? How to identify their need?
+
+- We know React Hooks are utility functions provided by React developers. They are simply JS functions exported by the React library, which we can reuse any number of times in our app.
+- Similarly, we can write our own Custom Hooks in our code.
+
+- **TO IDENTIFY THEIR NEED:**
+  - To create a Custom Hook is not mandatory, but a good practice!
+  - Whenever we find that a single component is dealing with more than 1 responsibility, we must think of bringing SRP into it by abstracting some "utility functionality" outside it.
+  - Suppose one component <Body/> is responsible for fetching data from an API as well as rendering that data using JSX. We must think of keeping only 1 aim for this component.
+  - So we can create a custom hook that actually fetches data from an API endpoint and returns that data.
+  - Now all we need to do in the Body component is to call that Custom Hook with the endpoint and simply use the data it returns.
+  -  The Body is no longer concerned about how the data is fetched from the API. That fetching logic is now abstracted out of the Body component.
+- Thus Custom Hooks act as Utility functions that abstract out the extra responsibility from the component. And they can now be re-used anywhere in our app, any number of times.  
