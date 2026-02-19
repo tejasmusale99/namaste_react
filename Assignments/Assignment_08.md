@@ -163,3 +163,35 @@ componentDidUpdate(prevState, prevProps){
     clearInterval(this.interval);
   }
 ```
+
+- This way, if we now unmount the component from the DOM , the interval is cleared. Then later when we mount it again, a new interval is set from 0. So we just have one interval running in browser that too only when the component is mounted.
+
+### Q11. Why do we use super(props) in constructor?
+
+- Class components in React are made by extending the 'React.Component' class exported by the React library.
+- This means any class component that we make is a child of that Component parent class.
+- We know in our class components, the 1st method to be called is constructor().
+- In the constructor() of class components, we must write super(props) as the very first line.
+- Note: super() call is a call to the Parent class's constructor ie. call to the Component class's constructor.
+- This is a common OOP principle that whenever we call the child constructor, the first thing to do in the child constructor is to initialise the parent class members.
+- Reason being child class derives the parent class and it must be using the parent class members. It would be wrong to use those parent class members in child class without even initialising them. This would cause an error.
+- Similarly in case of React class components, we know we will be using {this.props}. The 'this' object is actually coming from the parent class 'Component'. So we can't use {this.props} unless the 'this.props' has been initialised in the parent class.
+- super(props) initialises the 'this.props' so that it can be used in the child i.e. the React class component.
+- So, Recommended way: - React recommends calling super() with props as the first thing to make sure that this.props has been initialised!!
+
+```
+constructor(props){
+  super(props);  //call super(props) first to initialise 'this.props'
+  console.log(this.props); //then we can access 'this.props'
+}
+```
+
+- What if we don't pass props to super():
+
+```
+constructor(props){
+  super(); //calling super() without props
+  console.log(props); //✅ logs the props correctly since 'props' is the local variable
+  console.log(this.props); //undefined, since this.props has not been initialised ie. props have not been attached to the 'this' object 
+}
+```
