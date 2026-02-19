@@ -15,7 +15,7 @@
 - **CSS-in-JS:**
   - Styled-components, Emotion.
 
-- **CSS Frameworks:**  
+- **CSS Frameworks:**
   - Bootstrap, Material UI, Tailwind CSS, Ant Design, Chakra UI.
 
 - **CSS Modules:**
@@ -26,4 +26,6 @@
 
 ### Q2. How do we configure tailwind?
 
- - Official doc - (https://tailwindcss.com/docs/installation)
+- Official doc - (https://tailwindcss.com/docs/installation)
+
+
