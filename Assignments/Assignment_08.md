@@ -141,3 +141,25 @@ componentDidUpdate(prevState, prevProps){
   }
 }
 ```
+
+### Q10. Why do we use componentWillUnmount? Show with example.
+
+- compononentWillUnmount(): It is the 5th and the last Lifecycle method that gets executed just before the class component is about to get unmounted from the DOM.
+- It is useful for doing any clean up like clearing the interval, or timeout that we might have set earlier while mounting that component.
+- In SPA, when we are leaving a page, we are not literally doing so. We are just refreshing and reloading components in the same single HTML page.
+- So any timers or intervals that we have set in the component remain in the browser even after the component gets unmounted from the DOM.
+- We don't want multiple intervals or timers being run in the browser even after the component has been unmounted from the DOM. So for that, make use of componentWillUnmount().
+- This is very important for building SCALABLE and PERFORMANT APPS. "CLEAR THE MESS THAT YOU MADE WHILE MOUNTING THE COMPONENT!!"
+- Eg: Suppose we set an interval while mounting the component. Now before unmounting, we must clear it:
+
+``` jsx
+  componentDidMount(){ //every time the component is mounted to the DOM, a new interval is set
+    this.interval = setInterval(()=>{
+      console.log("Namaste React OP")
+    }, 1000); //after every 1 second, prints "Namaste React OP"
+  }
+  componentWillUnmount(){
+    //clear the interval here:
+    clearInterval(this.interval);
+  }
+```
