@@ -195,3 +195,27 @@ constructor(props){
   console.log(this.props); //undefined, since this.props has not been initialised ie. props have not been attached to the 'this' object 
 }
 ```
+
+### Q12. What happens when there are multiple children components in the parent class component ?
+
+- Below is the order of execution.
+  - Constructor (Parent)
+  - Render (Parent)
+  - Constructor (Child 1)
+  - Render (Child 1)
+  - Constructor (Child 2)
+  - Render (Child 2)
+  - componentDidMount (Child 1)
+  - componentDidMount (Child 2)
+  - omponentDidMount (Parent)
+- There are 2 phases in the React lifecycle 
+  - Render phase
+  - Commit phase
+- The constructor method and render method come under the
+render phase while componentDidMount comes under the commit
+phase.
+- In the commit phase, React updates the DOM.
+- Since updating the DOM is an expensive task, React batches all the constructor methods and render methods of children components and once there is no more child component, then it performs the commit phase.
+- componentDidMount is used to make an API call inside it.
+  
+
