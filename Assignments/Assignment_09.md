@@ -93,4 +93,40 @@ each one of them has a single responsibility.
   - So we can create a custom hook that actually fetches data from an API endpoint and returns that data.
   - Now all we need to do in the Body component is to call that Custom Hook with the endpoint and simply use the data it returns.
   -  The Body is no longer concerned about how the data is fetched from the API. That fetching logic is now abstracted out of the Body component.
-- Thus Custom Hooks act as Utility functions that abstract out the extra responsibility from the component. And they can now be re-used anywhere in our app, any number of times.  
+- Thus Custom Hooks act as Utility functions that abstract out the extra responsibility from the component. And they can now be re-used anywhere in our app, any number of times.
+
+### Q8. How to write a custom hook?
+- Since Custom Hook is a utility function, we should think of placing it into the 'utils' folder.
+- We should maintain separate file for separate hook and name the file exactly same as the hook's name.
+- Custom Hook's name should always begin with 'use', for example, 'useFetch'. This is a good convention and tells React that it is not a simple JS function but a hook.
+- Always begin with writing the Contract of the custom hook i.e. what it takes as input and what it returns as output.
+- This is the Contract for useRestaurantMenu hook. It takes resId as input and returns corresponding resInfo as output.
+- Eg: resId(I/P) ------> | useRestaurantMenu(Hook) | -----------------> resInfo(O/P)
+- Once the contract is clear, we can write the actual logic inside the Custom hook.
+
+```
+const useRestaurantMenu = (resId) => {
+
+  //fetching-data logic
+  '
+  '
+  return resInfo;
+}
+export default useRestaurantMenu;
+```
+
+### Q9. What is meant by 'Linting'? 
+- Linting is a process of running your code through a tool to analyse for potential errors. It throws an error if you don't follow the conventions set by the linter.
+- ESLint is a popular JS linter that checks the JS code for best practices, with rules checking :
+  - Keys in Iterators
+  - Complete set of prop types
+  - Naming Conventions
+  - Imported something but not used it
+
+  ### Q10. What is meant by 'Bundling the app'?
+
+  - It means it takes all our files and bundles them together based on some logical separation.
+  - We create muliple logical bundles or chunks in our app.
+  - So, it is the splitting of code into various bundles or components which can then be loaded on-demand or in parallel.
+  - Bundling/Chunking/ Code Splitting/ Dynamic Bundling/On-Demand Loading etc are all the same thing.
+  - These help in optimising our apps when they become large-scale. In large-scale app, we divide the code into bundles and load these bundles of relatively small size.
