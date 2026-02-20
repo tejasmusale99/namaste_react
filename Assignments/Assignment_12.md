@@ -305,3 +305,12 @@ onClick={handleAddItem(item)}`
 - To properly call handleAddItem with an argument when the
   button is clicked, you should wrap it in an anonymous
   function, like in the second example.
+
+In older redux (vanilla redux), it was not allowed to mutate the state.
+We used to create a copy of our state and then modify that. We also
+had to return the new state.
+This whole process is still done by Redux behind the scenes but now it
+is not asking developers to do it. Redux is using the immer library to do
+it.
+In the new redux, we have to mutate the state. And it is not mandatory
+to return the state as well.
