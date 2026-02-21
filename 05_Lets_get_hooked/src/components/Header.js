@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 // const logoUrl = new URL("../assets/SwaadpointLogo.png", import.meta.url).href;
 
 import { LOGO_URL } from "../utils/constants.js";
-import useOnlineOffline from "../utils/customHooks/useOnlineOffline";
-import UserContext from "../utils/context/UserContext";
+import useOnlineOffline from "../utils/customHooks/useOnlineOffline.js";
+import UserContext from "../utils/context/UserContext.js";
 import { useSelector } from "react-redux";
 
 
