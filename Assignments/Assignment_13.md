@@ -32,3 +32,15 @@
     leaves the application.
   - In this testing, we test the complete flow of the application
     from beginning to the end.
+
+### Q2. What is Jest and why do we use it?
+
+- Jest is a popular JavaScript testing framework developed by Facebook. It's widely used for testing JavaScript code, particularly in the context of React applications. Here's why we use Jest:
+
+- **Simplicity:** Jest is designed to be easy to set up and use, with minimal configuration required.
+- **Zero Configuration:** It comes pre-configured with sensible defaults, reducing the need for complex setup.
+- **Fast and Parallel Execution:** Jest is optimized for speed, featuring parallel test execution and intelligent test running, which help reduce overall test suite execution time.
+- **Snapshot Testing:** Jest has built-in support for snapshot testing, allowing you to capture snapshots of your code's output and compare them to ensure they haven't changed unexpectedly.
+- **Mocking:** Jest provides powerful mocking capabilities, making it easy to mock dependencies, modules, and functions for testing components and modules in isolation.
+- **Assertion Library:** It comes with its own assertion library, simplifying the writing of clear and expressive test assertions without additional dependencies.
+- **Integration with React:** Jest integrates well with React applications and provides additional utilities specifically for testing React components, such as React Testing Library.
